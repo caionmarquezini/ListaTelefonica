@@ -7,6 +7,7 @@ services:
   # App backend service
   app-server:
     # Configuration for building the docker image for the backend service
+    image: cmarquezini/listatelefonica-backend
     build:
       context: java-backend # Use an image built from the specified dockerfile in the `java-backend` directory.
       dockerfile: Dockerfile
@@ -19,6 +20,7 @@ services:
 
   # Frontend Service 
   app-client:
+    image: cmarquezini/listatelefonica-frontend
     build:
       context: react-frontend # Use an image built from the specified dockerfile in the `polling-app-client` directory.
       dockerfile: Dockerfile

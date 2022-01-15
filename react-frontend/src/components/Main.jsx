@@ -17,19 +17,24 @@ export default class Main extends Component {
 
         
     }
-
     
 
     componentDidMount() {
         axios.get(`http://localhost:8080/api/v1`)
-            .then(res => { const contatos = res.data; this.setState({ contatos }); })
+        .then(res => { const contatos = res.data; this.setState({ contatos }); })
     }
 
 
     procurar() {
         this.nome = this.inputRef.current.value;
+        if (this.nome != "") {
         axios.get(`http://localhost:8080/api/v1/find/` + this.nome)
             .then(res => { const contatos = res.data; this.setState({ contatos }); })
+        } else {
+            axios.get(`http://localhost:8080/api/v1`)
+            .then(res => { const contatos = res.data; this.setState({ contatos }); })
+        }
+        
     }
 
     _handleKeyDown(e) {
