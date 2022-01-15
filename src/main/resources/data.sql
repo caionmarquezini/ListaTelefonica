@@ -1,5 +1,0 @@
-insert into contatos (id, nome, cidade, endereco, uf, cep, telefone, email) values (0,'Caio Marquezini', 'Ariranha', 'Rua 10 de Abril, 300', 'sp', '15960000', '17-996819031', 'caionmarqz@gmail.com');
-insert into contatos (id, nome, cidade, endereco, uf, cep, telefone, email) values (1,'Alberto Santiago', 'Santa Adelia', 'Rua Cónego Teixeira, 1452', 'SP', '15260000', '17-997140023', 'albertostgo@hotmail.com');
-insert into contatos (id, nome, cidade, endereco, uf, cep, telefone, email) values (2,'José Nelson Lima', 'Rio Preto', 'Rua Afonso Peixoto, 521', 'sp', '15160042', '17-981887242', 'jnl-rp@gmail.com');
-insert into contatos (id, nome, cidade, endereco, uf, cep, telefone, email) values (3,'Adail Teodoro', 'Potirendaba', 'Rua José da Penha, 9235', 'sp', '14190023', '17-995239932', 'adailteodoro_1@gmail.com');
-insert into contatos (id, nome, cidade, endereco, uf, cep, telefone, email) values (4,'Marcos Teobaldo', 'Sorocaba', 'Rua Pedro Calixto, 191', 'sp', '19881021', '17-981814423', 'marcos_teobaldo@outlook.com');
