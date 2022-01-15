@@ -18,6 +18,8 @@ services:
       - backend
       - frontend
 
+  #  ---/---
+
   # Frontend Service 
   app-client:
     image: cmarquezini/listatelefonica-frontend
