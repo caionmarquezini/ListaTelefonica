@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { API_BASE_URL } from '..'
 
 export default class Main extends Component {
     constructor(props) {
@@ -20,7 +21,8 @@ export default class Main extends Component {
     
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/v1`)
+        console.log(API_BASE_URL)
+        axios.get(API_BASE_URL+`/api/v1`)
         .then(res => { const contatos = res.data; this.setState({ contatos }); })
     }
 
@@ -28,10 +30,10 @@ export default class Main extends Component {
     procurar() {
         this.nome = this.inputRef.current.value;
         if (this.nome != "") {
-        axios.get(`http://localhost:8080/api/v1/find/` + this.nome)
+        axios.get(API_BASE_URL+`api/v1/find/`+this.nome)
             .then(res => { const contatos = res.data; this.setState({ contatos }); })
         } else {
-            axios.get(`http://localhost:8080/api/v1`)
+            axios.get(API_BASE_URL+`api/v1/`)
             .then(res => { const contatos = res.data; this.setState({ contatos }); })
         }
         
@@ -54,7 +56,7 @@ export default class Main extends Component {
                     </div>
                 </nav>
                 <table className="table">
-                    <thead className=".thead-dark">
+                    <thead className="">
                         <tr>
                             <td>Id</td>
                             <td>Name</td>
