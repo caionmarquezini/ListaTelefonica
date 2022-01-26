@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { API_BASE_URL } from '..'
 
 export default class Main extends Component {
     constructor(props) {
@@ -8,7 +7,7 @@ export default class Main extends Component {
 
         this.state = {
             nome: '',
-            contatos: []
+            contatos: [],
         }
 
         this.livesearch = React.createRef(this);
@@ -16,13 +15,15 @@ export default class Main extends Component {
         this.procurar = this.procurar.bind(this);
         this._handleKeyDown = this._handleKeyDown.bind(this);
 
-        
+        var api;
     }
     
 
     componentDidMount() {
-        console.log(API_BASE_URL)
-        axios.get(API_BASE_URL+`/api/v1`)
+        Main.api = `http://`+process.env.REACT_APP_API_BASE_URL+`:8080/api/v1`;
+    	console.log(process.env.REACT_APP_API_BASE_URL);
+        console.log(Main.api);
+        axios.get(Main.api)
         .then(res => { const contatos = res.data; this.setState({ contatos }); })
     }
 
@@ -30,10 +31,10 @@ export default class Main extends Component {
     procurar() {
         this.nome = this.inputRef.current.value;
         if (this.nome != "") {
-        axios.get(API_BASE_URL+`api/v1/find/`+this.nome)
+        axios.get(Main.api+`/find/` + this.nome)
             .then(res => { const contatos = res.data; this.setState({ contatos }); })
         } else {
-            axios.get(API_BASE_URL+`api/v1/`)
+            axios.get(Main.api)
             .then(res => { const contatos = res.data; this.setState({ contatos }); })
         }
         
@@ -56,7 +57,7 @@ export default class Main extends Component {
                     </div>
                 </nav>
                 <table className="table">
-                    <thead className="">
+                    <thead className=".thead-dark">
                         <tr>
                             <td>Id</td>
                             <td>Name</td>
