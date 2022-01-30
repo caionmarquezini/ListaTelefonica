@@ -26,9 +26,11 @@ services:
     build:
       context: react-frontend # Use an image built from the specified dockerfile in the `polling-app-client` directory.
       dockerfile: Dockerfile
-      args:
+#    environment:
+#      REACT_APP_API_BASE_URL: ${IP}
+      args:      
         REACT_APP_API_BASE_URL: 168.227.56.72
-        #set it to your url address or your ip
+    
     ports:
       - "80:80" # Forward the exposed port 80 on the container to port 80 on the host machine
     restart: always

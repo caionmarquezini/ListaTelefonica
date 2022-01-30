@@ -16,10 +16,9 @@ RUN npm install
 # Copy the main application
 COPY . ./
 
-# Arguments
+# Environment vars
 ARG REACT_APP_API_BASE_URL
 ENV REACT_APP_API_BASE_URL=${REACT_APP_API_BASE_URL}
-#retirar essa parte
 
 
 # Build the application
