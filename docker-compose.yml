@@ -29,7 +29,7 @@ services:
 #    environment:
 #      REACT_APP_API_BASE_URL: ${IP}
       args:      
-        REACT_APP_API_BASE_URL: 168.227.56.72
+        REACT_APP_API_BASE_URL: localhost
     
     ports:
       - "80:80" # Forward the exposed port 80 on the container to port 80 on the host machine
